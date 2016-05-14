@@ -1,7 +1,7 @@
 {
   "name": "vscode-livescript-preview",
   "displayName": "LiveScript Preview",
-  "description": "Previews compilation of LiveScript code",
+  "description": "LiveScript previewer for Visual Studio Code",
   "version": "0.0.1",
   "publisher": "eheitherd",
   "engines": {
