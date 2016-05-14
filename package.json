@@ -15,6 +15,14 @@
   ],
   "main": "./lib/extension",
   "contributes": {
+    "languages": [
+      {
+        "id": "javascript",
+        "filenamePatterns": [
+          "* LiveScript Preview"
+        ]
+      }
+    ],
     "commands": [
       {
         "command": "extension.livescript-preview",
