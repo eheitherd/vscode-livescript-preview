@@ -1,0 +1,53 @@
+{
+  "name": "vscode-livescript-preview",
+  "displayName": "LiveScript Preview",
+  "description": "Previews compilation of LiveScript code",
+  "version": "0.0.1",
+  "publisher": "eheitherd",
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.livescript-preview"
+  ],
+  "main": "./lib/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.livescript-preview",
+        "title": "LiveScript Preview"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.livescript-preview",
+        "key": "ctrl+shift+/",
+        "when": "editorTextFocus && editorLangId == 'livescript'"
+      }
+    ]
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "vscode:prepublish": "gulp build",
+    "build": "gulp build",
+    "watch": "gulp watch",
+    "lint": "ls-lint \"./src/**/*.ls?(on)\"",
+    "clean": "gulp clean"
+  },
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-livescript": "^3.0.0",
+    "gulp-newer": "^1.1.0",
+    "gulp-util": "^3.0.7",
+    "ls-lint": "^0.1.0",
+    "vinyl-paths": "^2.1.0",
+    "vscode": "^0.11.0"
+  },
+  "dependencies": {
+    "livescript": "^1.4.0"
+  }
+}
