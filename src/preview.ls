@@ -3,15 +3,17 @@
 
 require! {
   vscode: {workspace, Uri}
+  'prelude-ls': {Str}
   './content-provider': {update-content-provider}
-  './window': {get-active-editor, show-text-document}
+  './window': {get-active-editor, show-text-document, get-preview}
   './meta': {language, uri}
+  './debounced': Debounced
 }
 
 export preview-document = ->
   editor = get-active-editor!
   if editor?.document?.language-id is language
-    editor.document.fileName
+    editor.document.file-name
     |> make-preview-uri
     |> open-text-document
     |> (.then show-text-document)
@@ -20,25 +22,30 @@ export preview-document = ->
     |> (.then -> update-content-provider it.document.uri)
 
 export on-change = (event) ->
-  if is-valid event.document
-    debounced delay, -> update-content event.document.file-name
+  delayed-update event.document
+
+export on-select = (event) ->
+  delayed-update event.text-editor.document
+
+delayed-update = (document) ->
+  if is-target document
+    debounced.time-out recompile-delay, -> update-content document.file-name
 
 make-preview-uri = -> it |> uri |> Uri.parse
 
 open-text-document = workspace.open-text-document
 
-is-valid = (document) ->
-  document.language-id is language and
-    document is (get-active-editor!)?.document
+is-target = (document) ->
+  preview-filename = (get-preview!)?.document?.file-name ? '' |> drop-root
+  doc-filename = document.file-name |> make-preview-uri |> (.path) |> drop-root
+  preview-filename is doc-filename
+
+drop-root = Str.drop-while (is /[\/\.\\]/)
 
 update-content = (file-name) ->
   file-name
   |> make-preview-uri
   |> update-content-provider
 
-delay = 500
-timeout = null
-debounced = (delay, func) ->
-  # Passing an invalid ID to clearTimeout does not have any effect.
-  clear-timeout timeout
-  timeout := set-timeout func, delay
+recompile-delay = 500
+debounced = new Debounced

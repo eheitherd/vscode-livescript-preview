@@ -9,7 +9,11 @@ require! {
 
 export get-active-editor = -> window.active-text-editor
 
-export is-activated = -> !!find-preview!
+export is-activated = -> !!get-preview!
+
+export get-preview = ->
+  window.visible-text-editors
+  |> find (.document.uri.scheme is title)
 
 export show-text-document = (text-doc) ->
   editor = get-active-editor!
@@ -18,10 +22,6 @@ export show-text-document = (text-doc) ->
 
 get-display-column = ->
   # Uses it If preview pane already exists
-  | editor = find-preview!   => editor.view-column
+  | preview = get-preview!   => preview.view-column
   | it is ViewColumn.Three   => ViewColumn.Two
   | otherwise                => it + 1
-
-find-preview = ->
-  window.visible-text-editors
-  |> find (.document.uri.scheme is title)
