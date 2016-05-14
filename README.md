@@ -1,5 +1,6 @@
 # LiveScript Preview
-LiveScript previewer for Visual Studio Code.
+LiveScript previewer for Visual Studio Code.  
+Inspired by [CoffeeScript Preview](https://github.com/dcbarrett/vscode-coffeescript-preview).
 
 [![Dependency Status][dependency-img]][dependency-url]
 [![GitHub license][license-img]][license-url]
