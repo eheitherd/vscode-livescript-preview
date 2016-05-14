@@ -3,7 +3,7 @@
 
 require! {
   vscode: {window, workspace, commands}
-  './preview': {preview-document, on-change, on-select}
+  './preview': {toggle-preview, on-change, on-select}
   './content-provider': {content-provider, update-content-provider}
   './window': {get-active-editor}
   './meta': {title}
@@ -11,7 +11,7 @@ require! {
 
 export activate = (context) ->
   provider-reg = register-provider title, content-provider
-  command-reg = register-command "extension.#{title}" preview-document
+  command-reg = register-command "extension.#{title}" toggle-preview
   change-reg = register-on-change on-change
   select-reg = register-on-select on-select
 
