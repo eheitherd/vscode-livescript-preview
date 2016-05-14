@@ -50,6 +50,7 @@
     "gulp": "^3.9.1",
     "gulp-livescript": "^3.0.0",
     "gulp-newer": "^1.1.0",
+    "gulp-plumber": "^1.1.0",
     "gulp-util": "^3.0.7",
     "ls-lint": "^0.1.0",
     "vinyl-paths": "^2.1.0",

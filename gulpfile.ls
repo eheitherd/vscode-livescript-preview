@@ -5,6 +5,7 @@ require! {
   path
   gulp
   'gulp-util' : {log, colors}
+  'gulp-plumber': plumber
   'gulp-newer': newer
   'gulp-livescript': lsc
   del
@@ -19,6 +20,7 @@ products = [dir-lib]
 gulp.task \build ->
   gulp.src src
     .pipe newer dest: dir-lib, ext: \.js
+    .pipe plumber error-handler: log
     .pipe lsc!
     .pipe paths -> log-act \compile, it, dir-lib, \ls
     .pipe gulp.dest dir-lib
