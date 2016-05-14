@@ -1,0 +1,4 @@
+#------------------------------------------------------------------------------
+# Configuration of my rule for ls-lint
+
+no-variables: \ignore
