@@ -3,6 +3,7 @@
   "displayName": "LiveScript Preview",
   "description": "LiveScript previewer for Visual Studio Code",
   "version": "0.0.1",
+  "author": "Eheitherd Ceres",
   "publisher": "eheitherd",
   "engines": {
     "vscode": "^1.0.0"
