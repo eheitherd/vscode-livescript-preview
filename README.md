@@ -5,7 +5,7 @@ Inspired by [CoffeeScript Preview](https://github.com/dcbarrett/vscode-coffeescr
 [![Dependency Status][dependency-img]][dependency-url]
 [![GitHub license][license-img]][license-url]
 
-## Fearues
+## Features
 
 * Preview compilation of LiveScript code
 * Live update
