@@ -5,6 +5,8 @@ Inspired by [CoffeeScript Preview](https://github.com/dcbarrett/vscode-coffeescr
 [![Dependency Status][dependency-img]][dependency-url]
 [![GitHub license][license-img]][license-url]
 
+![LiveScript Preview Sample](./livescript-preview-sample.png)
+
 ## Features
 
 * Preview compilation of LiveScript code
