@@ -29,6 +29,17 @@
   "contributes": {
     "languages": [
       {
+        "id": "livescript",
+        "extensions": [
+          ".ls",
+          ".lson"
+        ],
+        "aliases": [
+          "LiveScript",
+          "ls"
+        ]
+      },
+      {
         "id": "javascript",
         "filenamePatterns": [
           "* LiveScript Preview"
