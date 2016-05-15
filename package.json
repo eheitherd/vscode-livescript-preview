@@ -10,10 +10,21 @@
   "categories": [
     "Other"
   ],
+  "keywords": [
+    "livescript",
+    "preview",
+    "visual studio code",
+    "vs code",
+    "extension"
+  ],
+  "galleryBanner": {
+    "coloe": "#e8fff7",
+    "theme": "light"
+  },
+  "main": "./lib/extension",
   "activationEvents": [
     "onCommand:extension.livescript-preview"
   ],
-  "main": "./lib/extension",
   "contributes": {
     "languages": [
       {
@@ -37,13 +48,8 @@
       }
     ]
   },
-  "scripts": {
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "vscode:prepublish": "gulp build",
-    "build": "gulp build",
-    "watch": "gulp watch",
-    "lint": "ls-lint \"./src/**/*.ls?(on)\"",
-    "clean": "gulp clean"
+  "dependencies": {
+    "livescript": "^1.4.0"
   },
   "devDependencies": {
     "del": "^2.2.0",
@@ -56,7 +62,17 @@
     "vinyl-paths": "^2.1.0",
     "vscode": "^0.11.0"
   },
-  "dependencies": {
-    "livescript": "^1.4.0"
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eheitherd/vscode-livescript-preview.git"
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "vscode:prepublish": "gulp build",
+    "build": "gulp build",
+    "watch": "gulp watch",
+    "lint": "ls-lint \"./src/**/*.ls?(on)\"",
+    "clean": "gulp clean"
   }
 }
