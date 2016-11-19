@@ -11,7 +11,7 @@ require! {
 
 export activate = (context) ->
   provider-reg = register-provider title, content-provider
-  command-reg = register-command "extension.#{title}" toggle-preview
+  command-reg = register-command "extension.#title" toggle-preview
   change-reg = register-on-change on-change
   select-reg = register-on-select on-select
 

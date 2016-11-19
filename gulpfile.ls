@@ -35,15 +35,15 @@ gulp.task \clean ->
 info = colors.green
 relpath = -> module.filename |> path.dirname |> path.relative _, it
 nixpath = -> it |> (.replace /\\/g \/)
-addslash = -> if (slice -1, it) is \/ then it else "#{it}/"
-replace-ext = (file, ext) -> file.replace /\.[^\.]+$/, ".#{ext}"
+addslash = -> if (slice -1, it) is \/ then it else "#it/"
+replace-ext = (file, ext) -> file.replace /\.[^\.]+$/, ".#ext"
 
 log-act-main = (act, file, dest, ext) ->
   if is-type \Array file
     for each-file in file => log-act-main act, each-file, dest
   else
     target = if ext? then replace-ext file, ext else file
-    msg = "#{act}: #{nixpath relpath target}"
+    msg = "#act: #{nixpath relpath target}"
     msg2 = if dest then " -> #{dest |> nixpath |> addslash}" else ''
     log info msg + msg2
 

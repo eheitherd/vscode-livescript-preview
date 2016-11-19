@@ -3,4 +3,4 @@
 
 export language = \livescript
 export title = "#{language}-preview"
-export uri = -> "#{title}:///#{it} LiveScript Preview"
+export uri = -> "#title:///#it LiveScript Preview"
