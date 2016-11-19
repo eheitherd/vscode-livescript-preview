@@ -12,7 +12,7 @@ export close-editor = (editor) ->
     close-active-editor!
   else
     focus editor
-      .then close-active-editor, ->
+      .then close-active-editor
       .then (-> focus active-editor), ->
 
 focus = (editor) ->
