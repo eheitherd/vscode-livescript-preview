@@ -61,18 +61,18 @@
     ]
   },
   "dependencies": {
-    "livescript": "^1.4.0"
+    "livescript": "^1.5.0"
   },
   "devDependencies": {
-    "del": "^2.2.0",
+    "del": "^2.2.2",
     "gulp": "^3.9.1",
-    "gulp-livescript": "^3.0.0",
-    "gulp-newer": "^1.1.0",
+    "gulp-livescript": "^3.0.1",
+    "gulp-newer": "^1.3.0",
     "gulp-plumber": "^1.1.0",
     "gulp-util": "^3.0.7",
-    "ls-lint": "^0.1.0",
+    "ls-lint": "^0.1.2",
     "vinyl-paths": "^2.1.0",
-    "vscode": "^0.11.0"
+    "vscode": "^1.0.3"
   },
   "license": "SEE LICENSE IN LICENSE",
   "repository": {
