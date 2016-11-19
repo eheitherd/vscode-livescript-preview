@@ -17,7 +17,7 @@ export close-editor = (editor) ->
 
 focus = (editor) ->
   if editor.viewColumn
-    command = "workbench.action.focus#{column editor.viewColumn}Editor"
+    command = "workbench.action.focus#{column editor.viewColumn}EditorGroup"
     commands.execute-command command
   else
     Promise.reject!
