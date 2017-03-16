@@ -6,7 +6,7 @@
   "author": "Eheitherd Ceres",
   "publisher": "eheitherd",
   "engines": {
-    "vscode": "^1.0.0"
+    "vscode": "^1.1.0"
   },
   "categories": [
     "Other"
@@ -69,10 +69,10 @@
     "gulp-livescript": "^3.0.1",
     "gulp-newer": "^1.3.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-util": "^3.0.7",
+    "gulp-util": "^3.0.8",
     "ls-lint": "^0.1.2",
     "vinyl-paths": "^2.1.0",
-    "vscode": "^1.0.3"
+    "vscode": "^1.1.0"
   },
   "license": "SEE LICENSE IN LICENSE",
   "repository": {
